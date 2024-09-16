@@ -6,8 +6,8 @@ export default async function Navigation() {
   const session = await auth();
 
   return (
-    <nav className="z-10 text-xl">
-      <ul className="flex gap-16 items-center">
+    <nav className="z-10 md:text-xl text-sm sm:text-base">
+      <ul className="flex xl:gap-16 gap-3 items-center">
         <li>
           <Link
             href="/cabins"
@@ -24,8 +24,16 @@ export default async function Navigation() {
             About
           </Link>
         </li>
-        <li className="flex gap-4 items-center justify-center">
-          {session?.user && (
+
+        <li className="ml-1">
+ 
+          <Link
+            href="/account"
+            className="hover:text-accent-400 transition-colors flex lg:gap-4 gap-2 items-center justify-center"
+          >
+            Guest area
+
+            {session?.user && (
             <Image
               className="h-8 rounded-full  "
               referrerPolicy="no-referrer"
@@ -35,12 +43,8 @@ export default async function Navigation() {
               height={32}
             />
           )}
-          <Link
-            href="/account"
-            className="hover:text-accent-400 transition-colors"
-          >
-            Guest area
           </Link>
+          
         </li>
       </ul>
     </nav>

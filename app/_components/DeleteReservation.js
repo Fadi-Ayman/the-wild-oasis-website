@@ -18,7 +18,7 @@ function DeleteReservation({ bookingId, onDelete }) {
     <button
       disabled={isPending}
       onClick={handleDeleteReservation}
-      className="group flex items-center gap-2 uppercase text-xs font-bold text-primary-300 flex-grow px-3 hover:bg-accent-600 transition-colors hover:text-primary-900 disabled:bg-gray-500"
+      className="group flex items-center justify-center  gap-2 uppercase text-xs font-bold text-primary-300 flex-grow px-5 sm:px-3 py-4 sm:py-0  hover:bg-accent-600 transition-colors hover:text-primary-900 disabled:bg-gray-500"
     >
       <TrashIcon
         className={`h-5 w-5 text-primary-600 group-hover:text-primary-800 transition-colors ${

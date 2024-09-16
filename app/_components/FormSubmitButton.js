@@ -9,7 +9,7 @@ function FormSubmitButton({ label, loadingLabel }) {
     <button
       type="submit"
       disabled={pending}
-      className="bg-accent-500 px-8 py-4 text-primary-800 font-semibold hover:bg-accent-600 transition-all disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300 flex gap-2"
+      className="bg-accent-500 md:px-8 px-4 md:py-4 py-3 text-primary-800 font-semibold hover:bg-accent-600 transition-all disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300 flex gap-2"
     >
       {pending ? (
         <>

@@ -23,6 +23,16 @@
     animation: rotate 1s infinite linear;
   }
 
+  @layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;  
+        scrollbar-width: none;  
+  }
+}
+
   @keyframes rotate {
     to {
       transform: rotate(1turn);
@@ -37,4 +47,61 @@
   --rdp-accent-color: theme("colors.accent.500") !important;
   --rdp-background-color: theme("colors.accent.600") !important;
   margin: 0 !important;
+}
+
+.rdp-dropdown > option {
+  color: black;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .rdp {
+    --rdp-cell-size: 32px !important;
+    font-size: 20px;
+  }
+
+  .rdp-caption_dropdowns {
+    --rdp-caption-font-size: 13px !important;
+  }
+
+  .rdp-months {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .rdp {
+    padding: 20px 10px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rdp-month.rdp-caption_end {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .rdp {
+    --rdp-cell-size: 32px !important;
+    font-size: 20px;
+  }
+
+  .rdp-caption_dropdowns {
+    --rdp-caption-font-size: 13px !important;
+  }
+
+  .rdp-months {
+    gap: 80px;
+  }
+
+  .rdp {
+    padding: 20px 20px;
+    margin: 10px 0px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

@@ -29,8 +29,8 @@ export default function RootLayout({ children }) {
       >
         <Header />
 
-        <div className="flex-1 px-8 py-12 grid">
-          <main className="max-w-7xl mx-auto w-full">
+        <div className="flex-1 px-4 xl:px-8 py-5  xl:py-9 grid">
+          <main className=" mx-auto w-full overflow-hidden">
             <ReservationProvider>
               <Suspense fallback={<Spinner />}>{children}</Suspense>
             </ReservationProvider>

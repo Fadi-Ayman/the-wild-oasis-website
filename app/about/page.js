@@ -12,13 +12,13 @@ export default async function Page() {
   const cabins = await getCabins();
 
   return (
-    <div className="grid grid-cols-5 gap-x-24 gap-y-32 text-lg items-center">
-      <div className="col-span-3">
-        <h1 className="text-4xl mb-10 text-accent-400 font-medium">
+    <div className="grid grid-cols-5 md:gap-x-24 gap-x-5 md:gap-y-32 gap-7 lg:text-lg text-base items-center max-w-7xl mx-auto">
+      <div className="md:col-span-3 col-span-5">
+        <h1 className=" lg:text-4xl text-3xl text-center mb-5 md:mb-10 text-accent-400 font-medium">
           Welcome to The Wild Oasis
         </h1>
 
-        <div className="space-y-8">
+        <div className="space-y-4  md:space-y-8 xl:text-lg text-base px-4 xl:px-2">
           <p>
             Where nature&apos;s beauty and comfortable living blend seamlessly.
             Hidden away in the heart of the Italian Dolomites, this is your
@@ -40,7 +40,7 @@ export default async function Page() {
         </div>
       </div>
 
-      <div className="col-span-2">
+      <div className="md:col-span-2 col-span-5 mb-12 md:mb-0">
         <Image
           src={image1}
           alt="Family sitting around a fire pit in front of cabin"
@@ -49,7 +49,7 @@ export default async function Page() {
         />
       </div>
 
-      <div className="relative aspect-square col-span-2">
+      <div className="relative aspect-square md:col-span-2 col-span-5 order-2 md:order-1">
         <Image
           src="/about-2.jpg"
           fill
@@ -58,12 +58,12 @@ export default async function Page() {
         />
       </div>
 
-      <div className="col-span-3">
-        <h1 className="text-4xl mb-10 text-accent-400 font-medium">
+      <div className=" order-1 md:order-2 col-span-5 md:col-span-3">
+        <h1 className="lg:text-4xl text-3xl text-center mb-5 md:mb-10 text-accent-400 font-medium">
           Managed by our family since 1962
         </h1>
 
-        <div className="space-y-8">
+        <div className="space-y-4  md:space-y-8 xl:text-lg text-base px-4 xl:px-2">
           <p>
             Since 1962, The Wild Oasis has been a cherished family-run retreat.
             Started by our grandparents, this haven has been nurtured with love
@@ -79,15 +79,24 @@ export default async function Page() {
             is like coming home.
           </p>
 
-          <div>
+          <div className={`hidden md:block`}>
             <a
               href="/cabins"
-              className="inline-block mt-4 bg-accent-500 px-8 py-5 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all"
+              className="inline-block mt-4 bg-accent-500 px-8 py-5 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all order-3"
             >
               Explore our luxury cabins
             </a>
           </div>
         </div>
+      </div>
+
+      <div className={`order-3 col-span-5  md:hidden`}>
+        <a
+          href="/cabins"
+          className="inline-block mt-2 bg-accent-500 px-6 py-4 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all order-3 w-full text-center"
+        >
+          Explore our luxury cabins
+        </a>
       </div>
     </div>
   );

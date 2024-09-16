@@ -53,29 +53,30 @@ function DateSelector({ settings, cabin, bookedDates }) {
         }
       />
 
-      <div className="flex items-center justify-between px-8 bg-accent-500 text-primary-800 h-[72px]">
-        <div className="flex items-baseline gap-6">
-          <p className="flex gap-2 items-baseline">
+      <div className="flex items-center justify-between lg:px-8 px-4 bg-accent-500 text-primary-800  py-3">
+        <div className="flex items-center lg:gap-6 gap-3 ">
+          <p className="flex lg:gap-2 gap-1 items-center ">
             {discount > 0 ? (
               <>
-                <span className="text-2xl">${regularPrice - discount}</span>
+                <span className="lg:text-2xl text-base 	">${regularPrice - discount}</span>
                 <span className="line-through font-semibold text-primary-700">
                   ${regularPrice}
                 </span>
               </>
             ) : (
-              <span className="text-2xl">${regularPrice}</span>
+              <span className="lg:text-2xl text-base">${regularPrice}</span>
             )}
+            
             <span className="">/night</span>
           </p>
           {numNights ? (
             <>
-              <p className="bg-accent-600 px-3 py-2 text-2xl">
+              <p className="bg-accent-600 lg:px-3 px-2 lg:py-2 py-1 lg:text-2xl text-base">
                 <span>&times;</span> <span>{numNights}</span>
               </p>
               <p>
-                <span className="text-lg font-bold uppercase">Total</span>{" "}
-                <span className="text-2xl font-semibold">${cabinPrice}</span>
+                <span className="lg:text-lg text-xs font-bold uppercase">Total </span>
+                <span className="lg:text-2xl text-base font-semibold">${cabinPrice}</span>
               </p>
             </>
           ) : null}
@@ -83,7 +84,7 @@ function DateSelector({ settings, cabin, bookedDates }) {
 
         {range.from || range.to ? (
           <button
-            className="border border-primary-800 py-2 px-4 text-sm font-semibold"
+            className="border  ml-3 border-primary-800 lg:py-2 py-1 lg:px-4 px-2 text-sm font-semibold"
             onClick={resetRange}
           >
             Clear
